@@ -11,10 +11,11 @@ app.use(express.json());
 
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)
+app.get("/", (req, res) => res.json({msg: "hello world after the class"}));
 
 
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose.connect('mongodb+srv://anish22gems:Anish2003@cluster0.2vjoggf.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
+//mongoose.connect('mongodb+srv://anish22gems:Anish2003@cluster0.2vjoggf.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
